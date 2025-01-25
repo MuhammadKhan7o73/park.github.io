@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Someone Special</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom right, #ff7e5f, #feb47b);
+            color: #fff;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #finalPage {
+            display: none;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        #yesButton {
+            background-color: #28a745;
+            color: #fff;
+        }
+        #ofCourseButton {
+            background-color: #17a2b8;
+            color: #fff;
+        }
+        #noButton {
+            background-color: #dc3545;
+            color: #fff;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="homepage">
+        <h1>Hey N! 💖</h1>
+        <p>I made this special for you. Click below to check it out!</p>
+        <button onclick="nextPage()">Click to Continue</button>
+    </div>
+
+    <div id="finalPage">
+        <h1>You inspire me every day! 🌟</h1>
+        <p>Will you be my bestie?</p>
+        <button id="yesButton" onclick="celebrate()">Yes</button>
+        <button id="ofCourseButton" onclick="playful()">Of course!</button>
+        <button id="noButton" onclick="moveButton()">No</button>
+    </div>
+
+    <script>
+        function nextPage() {
+            document.getElementById('homepage').style.display = 'none';
+            document.getElementById('finalPage').style.display = 'block';
+        }
+
+        function celebrate() {
+            alert(
+                "Yay! 🎉\n" + 
+                "You’ve made me the shortest person!!\n" + 
+                "Oops! I mean the happiest person :)"
+            );
+            document.body.style.background = "#32CD32";
+        }
+
+        function playful() {
+            alert("Haha, I knew it! You had no other option! 😉");
+            document.body.style.background = "#1E90FF";
+        }
+
+        function moveButton() {
+            const button = document.getElementById('noButton');
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+    </script>
+</body>
+</html>
